@@ -80,6 +80,7 @@ function App() {
      if (data.cod !== 200) {
   alert(data.message || "City not found");
   return;}
+
       setWeatherData({
         temp: Math.floor(data.main.temp),
         humidity: data.main.humidity,
@@ -97,6 +98,11 @@ function App() {
 
   return (
     <>
+    <div key={weatherData?.city}
+  className="transition-opacity duration-300 opacity-0 animate-fadeIn">
+
+
+
     <div className="flex justify-center py-[10rem]">
 
       <div className="w-4/12 text-lg p-10 rounded-lg bg-gray-400">
@@ -120,6 +126,9 @@ function App() {
        </> : 
        
        <>
+       
+
+
        <div className="bg-gray-700 my-5 p-15 rounded-2xl">
 
         <div className="flex  justify-center">
@@ -156,6 +165,9 @@ function App() {
        </>}
       </div>
     </div>
+
+
+  </div>
     
     </>
   );

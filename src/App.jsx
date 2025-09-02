@@ -105,17 +105,17 @@ function App() {
 
     <div className="flex justify-center py-[10rem]">
 
-      <div className="w-4/12 text-lg p-10 rounded-lg bg-gray-400">
+      <div className="w-11/12 text-lg p-10 rounded-lg border-1 border-white bg-neutral-900 from-40%  bg-gradient-to-b to-cyan-600/80 sm:w-7/12  md:w-6/12 lg:w-5/12 xl:w-4/12">
         <div className="flex gap-2 p-2 justify-center">
           <div className="">
             <input
               type="text" onChange={location}
-              className="bg-gray-500 p-1 border rounded-xl w-[20rem]"
+              className="bg-gray-800 text-white p-1 border-1 border-white rounded-xl lg:w-[20rem] xl:w-[20rem]"
               placeholder="Enter city"
             />
           </div>
           <div className="flex">
-            <button onClick={() => search(userInput)} className="border p-2 rounded-xl"><IoIosSearch/></button>
+            <button onClick={() => search(userInput)} className="border-1 border-white p-2 rounded-xl"><IoIosSearch/></button>
           </div>
         </div>
        {!weatherData ? 
@@ -129,12 +129,12 @@ function App() {
        
 
 
-       <div className="bg-gray-700 my-5 p-15 rounded-2xl">
+       <div className="bg-neutral-900 bg-gradient-to-b via-neutral-900 text-white text-shadow-cyan-500 text-shadow-[0_0_8px] from-neutral-100/10 my-5 p-15 rounded-2xl">
 
         <div className="flex  justify-center">
           <div className="">
             <h1 className="text-3xl font-bold">{weatherData.city}</h1>
-            <p className="text-7xl px-4">
+            <p className="text-7xl px-5]">
               {weatherData.icon}
             </p>
           </div>
@@ -148,7 +148,7 @@ function App() {
         </div>
        </div>
 
-        <div className="  flex justify-between p-5">
+        <div className="  flex justify-between p-2 md:p-5">
           <div className="text-2xl font-semibold">
             <span className="text-5xl"><WiWindy/></span>
             <h1>Wind</h1>

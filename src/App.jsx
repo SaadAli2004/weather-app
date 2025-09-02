@@ -115,12 +115,12 @@ function App() {
             />
           </div>
           <div className="flex">
-            <button onClick={() => search(userInput)} className="border-1 border-white p-2 rounded-xl"><IoIosSearch/></button>
+            <button onClick={() => search(userInput)} className="border-1 border-white p-2 rounded-xl text-white"><IoIosSearch/></button>
           </div>
         </div>
        {!weatherData ? 
        <>
-       <div className="flex justify-center p-8  ">
+       <div className="flex justify-center p-8 text-gray-300 ">
         <h1>Enter the city name</h1>
        </div>
        </> : 
@@ -129,12 +129,12 @@ function App() {
        
 
 
-       <div className="bg-neutral-900 bg-gradient-to-b via-neutral-900 text-white text-shadow-cyan-500 text-shadow-[0_0_8px] from-neutral-100/10 my-5 p-15 rounded-2xl">
+       <div className="bg-neutral-900 bg-gradient-to-b via-neutral-900 text-white text-shadow-cyan-500 from-neutral-100/10 my-5 p-15 rounded-2xl">
 
         <div className="flex  justify-center">
           <div className="">
             <h1 className="text-3xl font-bold">{weatherData.city}</h1>
-            <p className="text-7xl px-5]">
+            <p className="text-7xl px-5">
               {weatherData.icon}
             </p>
           </div>
@@ -148,7 +148,7 @@ function App() {
         </div>
        </div>
 
-        <div className="  flex justify-between p-2 md:p-5">
+        <div className="  flex justify-between p-2 md:p-5 text-emerald-300">
           <div className="text-2xl font-semibold">
             <span className="text-5xl"><WiWindy/></span>
             <h1>Wind</h1>

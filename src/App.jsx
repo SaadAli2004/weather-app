@@ -59,7 +59,8 @@ function App() {
 
   }
 
-  console.log("API Key:", key);
+ 
+
 
 
   const search = async (city) => {
@@ -73,10 +74,10 @@ function App() {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
       const response = await fetch(url);
       const data = await response.json();
-      
       const icons = allIcons[data.weather[0].icon];
+      console.log(data);
 
-
+        
      if (data.cod !== 200) {
   alert(data.message || "City not found");
   return;}
@@ -87,14 +88,13 @@ function App() {
         city: data.name,
         weather: data.weather[0].main,
         wind: Math.round(data.wind.speed),
-        icon: icons 
+        icon: icons,
 
       })
     } catch (error) {
       alert("Incorrect location");
     }
   };
-
 
   return (
     <>
@@ -132,17 +132,18 @@ function App() {
        <div className="bg-neutral-900 bg-gradient-to-b via-neutral-900 text-white text-shadow-cyan-500 from-neutral-100/10 my-5 p-15 rounded-2xl">
 
         <div className="flex  justify-center">
-          <div className="">
-            <h1 className="text-3xl font-bold">{weatherData.city}</h1>
-            <p className="text-7xl px-5">
+          <div className="flex flex-col items-center">
+            <h1 className="text-3xl font-bold text-emerald-400 text-shadow-[0_0_5px] text-shadow-cyan-600">{weatherData.city}</h1>
+            <p className="text-7xl">
               {weatherData.icon}
             </p>
+                 <h1 className="text-2xl text-gray-600"> {weatherData.weather}</h1>
           </div>
         </div>
         <div className=" ">
           <div className="flex justify-center items-center">
           <h1 className="text-6xl font-bold">{weatherData.temp}</h1>
-          <h1 className="text-3xl font-semibold">°C</h1>
+          <h1 className="text-3xl font-semibold text-cyan-400">°C</h1>
 
           </div>
         </div>
@@ -165,7 +166,6 @@ function App() {
        </>}
       </div>
     </div>
-
 
   </div>
     
